@@ -1,0 +1,62 @@
+<script type="text/javascript">
+    RED.nodes.registerType('pw7',{
+        category: 'formats',
+        color: '#2D9596',
+        defaults: {
+            name: { value: "" },
+			input_key: { value: "" },
+			output_key: { value: "" },
+			cases: { value: "uppercase" },
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "file.svg",
+        label: function() {
+            return this.name||"pw7";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="pw7">
+   <div class="form-row">
+    <label for="node-input-input_key">
+    <i class="fa fa-arrow-right"></i> Input prop</label>
+    <input
+      type="text"
+      id="node-input-input_key"
+      style="width: 70%;"
+      placeholder="property name in msg.payload or empty for all"
+    />
+  </div>
+  <div class="form-row">
+    <label for="node-input-output_key"
+      ><i class="fa fa-solid fa-arrow-left"></i> Output prop</label>
+    <input
+      type="text"
+      id="node-input-output_key"
+      style="width: 70%;"
+      placeholder="property name"
+    />
+  </div>
+  <div class="form-row">
+    <label style="width:auto" for="node-input-cases"
+      ><i class="fa fa-hourglass-half"></i> Cases&nbsp;</label>
+    <select name="cases" id="node-input-cases">
+      <option value="uppercase">Upper case</option>
+      <option value="snakecase">Snake case</option>
+      <option value="camelcase">CamelCase</option>
+    </select>
+    
+  </div>
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name" />
+  </div>
+  <div class="form-tips" style="font-size:83%">
+   Converts input string to uppercase, snakecase or camelcase.
+  </div>
+</script>
+
+<script type="text/html" data-help-name="pw7">
+    <p>A simple node that converts messages into uppercase, snakecase or camelcase</p>
+</script>
