@@ -1,0 +1,13 @@
+{
+  "name": "node-red-contrib-pw7",
+  "version": "1.0.0",
+  "description": "Node for PW7",
+  "author": "",
+  "license": "ISC",
+  "main": "pw7/pw7.js",
+  "node-red" : {
+        "nodes": {
+            "pw7": "pw7/pw7.js"
+        }
+    }
+}
